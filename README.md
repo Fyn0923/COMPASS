@@ -22,8 +22,8 @@ Rscript coding_variants2amino_acids.R \
 ```
 | Parameter                               | Example                                              | Description                                                                                                                                       |
 | --------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--category`                            | `missense`                                           | Type of coding variants to analyze. Options: `missense`, `disruptive missense`, `ptv`, `plof`.                                                                 |
-| `--obj_nullmodel.file`                  | `obj.STAAR.UKB.Brain_Spine_Secondary.20250422.Rdata` | The pre-computed null model object was generated for the target phenotype.                                                     |
+| `--category`                            | `missense`                                           | Type of coding variants to analyze. Options: `missense`, `disruptive missense`, `ptv`, `plof`.                                                    |
+| `--obj_nullmodel.file`                  | `obj.STAAR.UKB.Brain_Spine_Secondary.20250422.Rdata` | The pre-computed null model object was generated for the target phenotype.                                                                        |
 | `--chr`                                 | `6`                                                  | Chromosome number containing the target gene.                                                                                                     |
 | `--gds.path`                            | `ukb.500k.wgs.chr6.pass.annotated.extend.gds`        | Path to the annotated GDS file containing WGS variants for the specified chromosome.                                                              |
 | `--gene_name`                           | `CRIP3`                                              | Name of the target gene for analysis.                                                                                                             |
@@ -46,15 +46,15 @@ python patch_scanning.py \
 
 | Parameter          | Example                                                  | Description                                                                                                     |
 | ------------------ | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `--i_pdb_file`     | `bcl2_chronic_lymphoid_leukemia.pdb`                     | Input PDB file containing the 3D structure of the target protein.            |
-| `--i_variant_file` | `BCL2_ENST00000333681_onestep_variant.txt`               | Variant file listing disease-associated variants (output from the sequence-based selection step).                 |
+| `--i_pdb_file`     | `bcl2_chronic_lymphoid_leukemia.pdb`                     | Input PDB file containing the 3D structure of the target protein.                                               |
+| `--i_variant_file` | `BCL2_ENST00000333681_onestep_variant.txt`               | Variant file listing disease-associated variants (output from the sequence-based selection step).               |
 | `--radius`         | `20`                                                     | Radius (in Å) used to define a 3D patch centered on each residue’s Cα atom.                                     |
-| `--transcript`     | `ENST00000333681`                                        | Ensembl transcript ID corresponding to the analyzed gene. The default setting is `standard`, which automatically selects the canonical transcript for analysis.                                                       |
-| `--gene_name`      | `BCL2`                                                   | Name of the target gene for analysis.                                                                  |
-| `--obj_nullmodel`  | `obj.STAAR.UKB.Chronic_Lymphoid_Leukemia.20250422.Rdata` | The pre-computed null model object was generated for the target phenotype.                                     |
+| `--transcript`     | `ENST00000333681`                                        | Ensembl transcript ID corresponding to the analyzed gene. The default setting is `standard`, which automatically selects the canonical transcript for analysis.|
+| `--gene_name`      | `BCL2`                                                   | Name of the target gene for analysis.                                                                           |
+| `--obj_nullmodel`  | `obj.STAAR.UKB.Chronic_Lymphoid_Leukemia.20250422.Rdata` | The pre-computed null model object was generated for the target phenotype.                                      |
 | `--chr`            | `18`                                                     | Chromosome number containing the target gene.                                                                   |
-| `--category`       | `missense`                                               | Variant category to analysis in the patch scanning.                                    |
-| `--gds_path`       | `ukb.500k.wgs.chr18.pass.annotated.extend.gds`           | Path to the annotated GDS file containing WGS variants for the specified chromosome.                                                   |
+| `--category`       | `missense`                                               | Variant category to analysis in the patch scanning.                                                             |
+| `--gds_path`       | `ukb.500k.wgs.chr18.pass.annotated.extend.gds`           | Path to the annotated GDS file containing WGS variants for the specified chromosome.                            |
 | `--num_patch`      | `10`                                                     | Specifies the number of top-ranked structural hotspots (patches) with the lowest P-values to be reported. A value of 999 outputs all identified hotspots. |
 ## Authors
 Yannuo Feng, Yihao Peng, Shijie Fan, Shijia Bian, Chang Lu, Xihao Li, Zilin Li
