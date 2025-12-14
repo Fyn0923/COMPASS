@@ -1,7 +1,7 @@
 # COMPASS: COding variants MaPping onto AI predicted Structural hotSpots
 A computational pipeline for structural and functional interpretation of disease-associated coding variants.
 ## Description
-COMPASS is a computational framework designed to integrate whole-genome sequencing (WGS) data with AI-predicted protein structures to systematically link disease-associated coding variants with functional structural regions and therapeutic targets. By combining sequence-based variant selection and structure-based patch scanning, COMPASS identifies disease-relevant substructures (functional hotspots) that accelerate genetics-driven drug discovery.
+COMPASS is a computational framework designed to integrate whole-genome sequencing (WGS) data with experimentally determined and AI-predicted protein structures to systematically link disease-associated coding variants with functional structural regions and therapeutic targets. By combining sequence-based variant selection and structure-based patch scanning, COMPASS identifies disease-relevant substructures (functional hotspots) that accelerate genetics-driven drug discovery.
 ## Workflow Overview
 ![COMPASS_workflow](docs/workflow.png)
 ## Docker Image
@@ -27,7 +27,7 @@ Rscript coding_variants2amino_acids.R \
 | `--chr`                                 | `6`                                                  | Chromosome number containing the target gene.                                                                                                     |
 | `--gds.path`                            | `ukb.500k.wgs.chr6.pass.annotated.extend.gds`        | Path to the annotated GDS file containing WGS variants for the specified chromosome.                                                              |
 | `--gene_name`                           | `CRIP3`                                              | Name of the target gene for analysis.                                                                                                             |
-| `--protein_sequence_selection_strategy` | `one-step`                                           | Strategy used to select representative amino acid sequences when multiple variants occur at the same position. Options: `one-step` or `stepwise`. |
+| `--protein_sequence_selection_strategy` | `one-step`                                           | Strategy used to select representative amino acid sequences when multiple variants occur at the same position. Options: `one-step`, `stepwise`, `best=subset-selection`. |
 
 Structure-based patch scanning
 ```
@@ -57,6 +57,6 @@ python patch_scanning.py \
 | `--gds_path`       | `ukb.500k.wgs.chr18.pass.annotated.extend.gds`           | Path to the annotated GDS file containing WGS variants for the specified chromosome.                            |
 | `--num_patch`      | `10`                                                     | Specifies the number of top-ranked structural hotspots (patches) with the lowest P-values to be reported. A value of 999 outputs all identified hotspots. |
 ## Authors
-Yannuo Feng, Yihao Peng, Shijie Fan, Shijia Bian, Chang Lu, Xihao Li, Zilin Li
+Yannuo Feng, Yihao Peng, Shijie Fan, Shijia Bian, Jingjing Gong, Chang Lu, Xihao Li, Zilin Li
 
 Contact: luc816@nenu.edu.cn, xihaoli@unc.edu, lizl@nenu.edu.cn
