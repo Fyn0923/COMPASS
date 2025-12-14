@@ -1,4 +1,4 @@
-# COMPASS: COding variants MaPping onto AI predicted Structural hotSpots
+# COMPASS: COding variant Mapping onto Protein-structure-Anchored hotSpotS
 A computational pipeline for structural and functional interpretation of disease-associated coding variants.
 ## Description
 COMPASS is a computational framework designed to integrate whole-genome sequencing (WGS) data with experimentally determined and AI-predicted protein structures to systematically link disease-associated coding variants with functional structural regions and therapeutic targets. By combining sequence-based variant selection and structure-based patch scanning, COMPASS identifies disease-relevant substructures (functional hotspots) that accelerate genetics-driven drug discovery.
