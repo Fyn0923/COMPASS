@@ -3,16 +3,17 @@ A computational pipeline for structural and functional interpretation of disease
 ## Description
 COMPASS is a computational framework designed to integrate whole-genome sequencing (WGS) data with experimentally determined and AI-predicted protein structures to systematically link disease-associated coding variants with functional structural regions and therapeutic targets. By combining sequence-based variant selection and structure-based patch scanning, COMPASS identifies disease-relevant substructures (functional hotspots) that accelerate genetics-driven drug discovery.
 ## Workflow Overview
-The framework comprises three modules: (1) a sequence module that maps variants to transcript-specific amino acid sequences and consolidates association signals at the residue level; (2) a structure module that localizes disease-relevant hotspots in the protein; and (3) an annotation module that integrates functional annotations and automated literature mining to support interpretation.
+The framework comprises three modules: (i) a sequence module (COMPASS-Seq) that maps variants to transcript-specific amino acid sequences and consolidates association signals at the residue level; (ii) a structure module (COMPASS-Struct) that localizes disease-relevant hotspots in the protein; and (iii) an annotation module (COMPASS-Anno) that integrates functional annotations and automated literature mining to support interpretation.
+
 
 ![COMPASS_workflow](docs/workflow.jpg)
 ## Docker Image
-A Docker image for COMPASS, which includes R and all COMPASS-related packages pre-installed, is available on Docker Hub.The docker image can be pulled using
+A Docker image for COMPASS, which includes both R and Python environments with all COMPASS-related dependencies pre-installed, is available on Docker Hub. The image can be pulled using:
 ```
 docker pull fengyn923/compass:0.1.0
 ```
 ## Examples
-Sequence-based selection
+### COMPASS-Seq
 ```
 Rscript coding_variants2amino_acids.R \
   --category=missense \
@@ -31,7 +32,7 @@ Rscript coding_variants2amino_acids.R \
 | `--gene_name`                           | `CRIP3`                                              | Name of the target gene for analysis.                                                                                                             |
 | `--protein_sequence_selection_strategy` | `one-step`                                           | Strategy used to select representative amino acid sequences when multiple variants occur at the same position. Options: `one-step`, `stepwise`, `best-subset-selection`. |
 
-Structure-based patch scanning
+### COMPASS-Struct
 ```
 python patch_scanning.py \
   --i_pdb_file bcl2_chronic_lymphoid_leukemia.pdb \
@@ -58,8 +59,14 @@ python patch_scanning.py \
 | `--category`       | `missense`                                               | Variant category to analysis in the patch scanning.                                                             |
 | `--gds_path`       | `ukb.500k.wgs.chr18.pass.annotated.extend.gds`           | Path to the annotated GDS file containing WGS variants for the specified chromosome.                            |
 | `--num_patch`      | `10`                                                     | Specifies the number of top-ranked structural hotspots (patches) with the lowest P-values to be reported. A value of 999 outputs all identified hotspots. |
+
+### COMPASS-Anno
+COMPASS-Anno is used to provide functional interpretation for disease-associated structural hotspots identified by COMPASS. The interpretation is achieved by integrating functional context and literature-based evidence, with assistance from large language models, including ChatGPT and DeepSeek, and is accessible through our website (http://compassbio.net).
+
+
+
 ## Authors
-Yannuo Feng<sup>&ast;</sup>, Yihao Peng<sup>&ast;</sup>, Shijie Fan<sup>&ast;</sup>, Shijia Bian, Jingjing Gong, Qikai Jiang, Chang Lu<sup>#</sup>, Xihao Li<sup>#</sup>, Zilin Li<sup>#</sup>. **Prioritizing druggable targets by mapping human disease-associated coding variants onto protein structures with COMPASS**
+Yannuo Feng<sup>&ast;</sup>, Yihao Peng<sup>&ast;</sup>, Shijie Fan<sup>&ast;</sup>, Shijia Bian, Jingjing Gong, Qikai Jiang, Chang Lu<sup>#</sup>, Xihao Li<sup>#</sup>, Zilin Li<sup>#</sup>. **Prioritizing druggable targets by mapping human disease-associated coding variants onto protein structures with COMPASS**.
 
 
 
