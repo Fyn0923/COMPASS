@@ -59,7 +59,9 @@ python patch_scanning.py \
 | `--gds_path`       | `ukb.500k.wgs.chr18.pass.annotated.extend.gds`           | Path to the annotated GDS file containing WGS variants for the specified chromosome.                            |
 | `--num_patch`      | `10`                                                     | Specifies the number of top-ranked structural hotspots (patches) with the lowest P-values to be reported. A value of 999 outputs all identified hotspots. |
 ## Authors
-Yannuo Feng, Yihao Peng, Shijie Fan, Shijia Bian, Jingjing Gong, Chang Lu, Xihao Li, Zilin Li
+Yannuo Feng<sup>&ast;</sup>, Yihao Peng<sup>&ast;</sup>, Shijie Fan<sup>&ast;</sup>, Shijia Bian, Jingjing Gong, Qikai Jiang, Chang Lu<sup>#</sup>, Xihao Li<sup>#</sup>, Zilin Li<sup>#</sup>. **Prioritizing druggable targets by mapping human disease-associated coding variants onto protein structures with COMPASS**
+
+
 
 Contact: luc816@nenu.edu.cn, xihaoli@unc.edu, lizl@nenu.edu.cn
 
